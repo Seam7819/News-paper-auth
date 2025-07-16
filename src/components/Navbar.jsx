@@ -23,9 +23,9 @@ const Navbar = () => {
         <NavLink to="/about">About</NavLink>
         <NavLink to="/career">Career</NavLink>
       </div>
-      <div className="login-btn flex gap-5">
+      <div className="login-btn flex items-center gap-5">
         {
-          user ?  <img src={user.photoURL} alt="" />:<img src={userImg} alt="" />
+          user ?  <img className="rounded-full w-12" src={user.photoURL} alt="" />:<img src={userImg} alt="" />
           
         }
         {
