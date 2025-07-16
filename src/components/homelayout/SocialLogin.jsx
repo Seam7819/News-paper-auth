@@ -1,7 +1,7 @@
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import auth from "../../Firebase/firebase.config";
+import { getAuth, GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import app from "../../Firebase/firebase.config";
 
 
 
@@ -9,6 +9,7 @@ const SocialLogin = () => {
 
   const GoogleProvider = new GoogleAuthProvider()
   const GitProvider = new GithubAuthProvider()
+    const auth = getAuth(app);
 
 
   const handleGoogleLogIn = () => {
@@ -16,7 +17,7 @@ const SocialLogin = () => {
       .then(res => {
         console.log(res);
       })
-      .cath(err=>{
+      .catch(err=>{
         console.log(err);
       })
   }
@@ -26,7 +27,7 @@ const SocialLogin = () => {
       .then(res => {
         console.log(res);
       })
-      .cath(err=>{
+      .catch(err=>{
         console.log(err);
       })
   }
